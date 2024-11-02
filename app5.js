@@ -33,51 +33,16 @@ app.get("/janken", (req, res) => {
   let total = Number( req.query.total );
   console.log( {hand, win, total});
   const num = Math.floor( Math.random() * 3 + 1 );
-  let judgement = '';
+  //let judgemnt = '';
   let cpu = '';
   if( num==1 ) cpu = 'グー';
   else if( num==2 ) cpu = 'チョキ';
   else if ( num==3 ) cpu = 'パー';
   // ここに勝敗の判定を入れる
-  if(num==1) {
-    if(your='グー') {
-      judgement = 'あいこ';
-      total+=1;
-    } else if (your='チョキ') {
-      judgement ='負け';
-      total+=1;
-    } else if (your='パー') {
-      judgement = '勝ち';
-      total+=1;
-      win+=1;
-    }
-  }
-  else if(num==2) {
-    if(your='グー') {
-      judgement = '勝ち';
-      win+=1;
-      total+=1;
-    } else if (your='チョキ') {
-      judgement ='あいこ';
-      total+=1;
-    } else if (your='パー') {
-      judgement = '負け';
-      total+=1;
-    }
-  }
-  else if(num==3) {
-    if(your='グー') {
-      judgement = '負け';
-      total+=1;
-    } else if (your='チョキ') {
-      judgement ='勝ち';
-      win+=1;
-      total+=1;
-    } else if(your='パー') {
-      judgement = 'あいこ';
-      total+=1;
-    }
-  }
+  
+  let judgement = '勝ち';
+  total += 1;
+  win += 1;
   const display = {
     your: hand,
     cpu: cpu,
