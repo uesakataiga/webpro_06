@@ -39,42 +39,42 @@ app.get("/janken", (req, res) => {
   else if( num==2 ) cpu = 'チョキ';
   else if ( num==3 ) cpu = 'パー';
   // ここに勝敗の判定を入れる
-  if(your='グー') {
-    if(num==1) {
+  if(num==1) {
+    if(your='グー') {
       judgement = 'あいこ';
       total+=1;
-    } else if (num==2) {
+    } else if (your='チョキ') {
+      judgement ='負け';
+      total+=1;
+    } else {
+      judgement = '勝ち';
+      total+=1;
+      win+=1;
+    }
+  }
+  if(num==2) {
+    if(your='グー') {
+      judgement = '勝ち';
+      win+=1;
+      total+=1;
+    } else if (your='チョキ') {
+      judgement ='あいこ';
+      total+=1;
+    } else {
+      judgement = '負け';
+      total+=1;
+    }
+  }
+  if(num==3) {
+    if(your='グー') {
+      judgement = '負け';
+      total+=1;
+    } else if (your='チョキ') {
       judgement ='勝ち';
       win+=1;
       total+=1;
     } else {
-      judgment = '負け';
-      total+=1;
-    }
-  }
-  if(your='チョキ') {
-    if(num==1) {
-      judgement = '負け';
-      total+=1;
-    } else if (num==2) {
-      judgement ='あいこ';
-      total+=1;
-    } else {
-      judgment = '勝ち';
-      win+=1;
-      total+=1;
-    }
-  }
-  if(your='パー') {
-    if(num==1) {
-      judgement = '勝ち';
-      win+=1;
-      total+=1;
-    } else if (num==2) {
-      judgement ='負け';
-      total+=1;
-    } else {
-      judgment = 'あいこ';
+      judgement = 'あいこ';
       total+=1;
     }
   }
