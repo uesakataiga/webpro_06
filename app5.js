@@ -46,13 +46,13 @@ app.get("/janken", (req, res) => {
     } else if (your='チョキ') {
       judgement ='負け';
       total+=1;
-    } else {
+    } else if (your='パー') {
       judgement = '勝ち';
       total+=1;
       win+=1;
     }
   }
-  if(num==2) {
+  else if(num==2) {
     if(your='グー') {
       judgement = '勝ち';
       win+=1;
@@ -60,12 +60,12 @@ app.get("/janken", (req, res) => {
     } else if (your='チョキ') {
       judgement ='あいこ';
       total+=1;
-    } else {
+    } else if (your='パー') {
       judgement = '負け';
       total+=1;
     }
   }
-  if(num==3) {
+  else if(num==3) {
     if(your='グー') {
       judgement = '負け';
       total+=1;
@@ -73,7 +73,7 @@ app.get("/janken", (req, res) => {
       judgement ='勝ち';
       win+=1;
       total+=1;
-    } else {
+    } else if(your='パー') {
       judgement = 'あいこ';
       total+=1;
     }
