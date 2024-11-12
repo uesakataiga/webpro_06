@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>丁半</title>
+</head>
+<body>
+    <p>あなたは<%= your %>に賭けました．</p>
+    <p>出目は<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= win %>勝<%= lose %>敗しています．</p>
+    <hr>
+    <form action="/tyouhann">
+        <input type="text" name="card" required>
+        <label for="card">次は何を出す？</label>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="lose" value="<%= lose %>">
+        <input type="submit" values="さあ　張った張った">
+    </form>   
+</body>
+</html>
