@@ -45,7 +45,8 @@ lose --> end1
 #### (1)
 ・起動方法は```node app5.js```とターミナルで起動させ，Webブラウザでlocalhost:8080/public/janken.htmlにアクセスする．janken.htmlの部分はアクセスしたいhtmlの名前を入力する．
 
-・編集したファイルは
+・Gitでファイルを管理するには，リポジトリのForkをすることで，自分のリポジトリに複製し，cloneすることで自分のパソコン上で編集できるようになる．
+そして，編集したファイルは
 ```git add .```
 ```git commit -am 'コメント'```
 ```git push```
