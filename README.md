@@ -61,6 +61,23 @@ lose --> end1
 ```const num = Math.floor( Math.random() * 3 + 1 );```
 では，1から3までの整数をランダムに決めている．そして，numの値が1ならグーを，2ならチョキ，3ならパーをコンピュータが出すようにしている．また，if文でWebブラウザでユーザーが入力したジャンケンの手とコンピュータが出した手によって勝敗の判定をしていて，totalを1増やし，勝った場合のみwinを1増やす．
 
+```mermaid
+flowchart TD;
+
+start["開始"];
+end1["終了"];
+if{"勝敗の判定"};
+win["試合数と勝利数を1増やす"];
+lose["試合数のみ1増やす"];
+con["ジャンケンの手を入力"]
+start --> con
+con --> if
+if --> |勝ち| win
+win --> end1
+if --> |負け| lose
+lose --> end1
+```
+
 2. /attimuitehoi
 機能はあっち向いてホイをユーザー側が顔，コンピュータ側が指を動かして行うものである．
 ```let face = req.query.face;```
@@ -69,6 +86,23 @@ lose --> end1
 では，それぞれ入力した上下左右を読み取るfaceと勝利数を読み取るwin，試合数を読み取るtotalを取得している．
 ```const num = Math.floor( Math.random() * 4 + 1 );```
 では，1から4までの整数をランダムに決めている．そして，numの値が1なら上を，2なら下，3なら右，4なら左をコンピュータが指すようにしている．また，if文でWebブラウザでユーザーが入力した顔の向きとコンピュータが指した方向によって勝敗の判定をしていて，totalを1増やし，勝った場合のみwinを1増やす．
+
+```mermaid
+flowchart TD;
+
+start["開始"];
+end1["終了"];
+if{"勝敗の判定"};
+win["試合数と勝利数を1増やす"];
+lose["試合数のみ1増やす"];
+con["顔の向きを入力"]
+start --> con
+con --> if
+if --> |顔と指の向きが不一致| win
+win --> end1
+if --> |顔と指の向きが一致| lose
+lose --> end1
+```
 
 3. /tyouhann
 機能は丁半をユーザーが丁か半か決め，コンピュータが出目を出力して行うものである．
@@ -79,3 +113,20 @@ lose --> end1
 ```const num = Math.floor( Math.random() * 6 + 1 );```
 ```const num1 = Math.floor( Math.random() * 6 + 1 );```
 では，それぞれ1から6までの整数をランダムに決めている．numとnum1の値で出目を定めている．そして，if文でWebブラウザでユーザーが入力した丁か半とコンピュータが出力した出目によって勝敗の判定をしていて，勝った場合のみwinを1増やし，負けた場合のみloseを1増やす．
+
+```mermaid
+flowchart TD;
+
+start["開始"];
+end1["終了"];
+if{"勝敗の判定"};
+win["勝利数を1増やす"];
+lose["敗北数を1増やす"];
+con["丁か半を入力"]
+start --> con
+con --> if
+if --> |出目の偶奇を当てる| win
+win --> end1
+if --> |出目の偶奇を外す| lose
+lose --> end1
+```
