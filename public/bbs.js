@@ -186,7 +186,6 @@ document.querySelector('#search').addEventListener('click', () => {
         }
     };
     console.log( params );
-    console.log(req.body.sn);
     const url = "/search_post";
     fetch( url, params )
     .then( (response) => {
