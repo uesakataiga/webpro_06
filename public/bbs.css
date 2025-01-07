@@ -1,0 +1,32 @@
+.cover {
+    border-bottom: 1px solid #0e9e58;
+    margin: 3px;
+}
+
+.name {
+    font-weight: bold;
+    width: 8em;
+}
+
+.mes {
+    margin-left: 30px;
+}
+
+.good {
+    margin-left: 200px
+}
+
+.dark-mode body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dark-mode #bbs {
+    background-color: #333333; /* ダークモードの掲示板背景 */
+    color: #ffffff; /* ダークモードで文字色を白に */
+}
+
+.dark-mode .cover {
+    background-color: #444444; /* ダークモードの投稿背景 */
+    border-color: #666666;
+}
